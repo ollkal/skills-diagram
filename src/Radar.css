@@ -1,0 +1,27 @@
+.Radar {
+  border: 1px solic #333;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.menu-column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+  flex: 1 0 30%;
+  padding: 0 50px;
+  width: 350px;
+  max-width: 350px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+  padding: 20px 180px;
+}

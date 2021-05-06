@@ -1,9 +1,9 @@
 import React from "react";
-import CompetenceSlider from "./CompetenceSlider"
-import "./SkillsInput.css";
+import CompetenceSlider from "./CompetenceSlider";
+import "./CompetenceList.css";
 
-const SkillsInput = ({ list, onChange }) => (
-  <div className="SkillsInput">
+const CompetenceList = ({ list, onChange }) => (
+  <div className="CompetenceList">
     <h3>Rate my skills</h3>
     {list.map((item) => (
       <CompetenceSlider
@@ -15,4 +15,4 @@ const SkillsInput = ({ list, onChange }) => (
   </div>
 );
 
-export default SkillsInput;
+export default CompetenceList;

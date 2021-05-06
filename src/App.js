@@ -1,6 +1,5 @@
 import "./App.css";
 import Radar from "./Radar";
-import SkillsForm from "./SkillsForm";
 
 function App() {
   return (

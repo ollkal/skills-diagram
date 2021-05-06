@@ -1,7 +1,8 @@
 import React from "react";
 import { Radar } from "react-chartjs-2";
 import "./Radar.css";
-import SkillsInput from "./SkillsInput";
+import CompetenceList from "./CompetenceList";
+import NameForm from "./NameForm";
 import Button from "@material-ui/core/Button";
 
 const initialList = [
@@ -71,10 +72,6 @@ const RadarChart = () => {
   }
 
   const handleChanges = (id) => (event, value) => {
-    console.log(id);
-    console.log(value);
-    console.log(event);
-
     var newList = list.slice();
 
     for (var i in newList) {
@@ -116,11 +113,16 @@ const RadarChart = () => {
     <div className="Radar">
       <div className="row">
         <div className="menu-column">
-          <SkillsInput list={list} onChange={handleChanges} />
-          <AddItem name={name} onChange={handleChange} onAdd={handleAdd} />
+          <div className="column-content">
+            <NameForm></NameForm>
+            <CompetenceList list={list} onChange={handleChanges} />
+            <AddItem name={name} onChange={handleChange} onAdd={handleAdd} />
+          </div>
         </div>
         <div className="column">
-          <Radar data={prepdata()} options={options} />
+          <div className="radar-content ">
+            <Radar data={prepdata()} options={options} />
+          </div>
         </div>
       </div>
     </div>
@@ -131,10 +133,11 @@ const AddItem = ({ name, onChange, onAdd }) => (
   <div>
     <input
       type="text"
-      placeholder="Add skill"
+      placeholder="New skill"
       value={name}
       onChange={onChange}
     />
+
     <Button variant="contained" color="primary" onClick={onAdd}>
       Add
     </Button>

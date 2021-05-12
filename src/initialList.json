@@ -1,0 +1,32 @@
+{
+  "initialList": [
+    {
+      "skill": "Frontend",
+      "value": 0
+    },
+    {
+      "skill": "Backend",
+      "value": 0
+    },
+    {
+      "skill": "Cloud",
+      "value": 0
+    },
+    {
+      "skill": "Azure",
+      "value": 0
+    },
+    {
+      "skill": "iOS/Andorid",
+      "value": 0
+    },
+    {
+      "skill": "CI/CD",
+      "value": 0
+    },
+    {
+      "skill": "Devops",
+      "value": 0
+    }
+  ]
+}

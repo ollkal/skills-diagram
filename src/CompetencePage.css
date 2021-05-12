@@ -1,5 +1,4 @@
-.Radar {
-  border: 1px solic #333;
+.CompetencePage {
 }
 .row {
   display: flex;
@@ -15,12 +14,12 @@
   width: 70%;
 }
 
-.column-content {
+.menu-column-content {
   padding: 6vh;
 }
 
 .radar-content {
-  padding: 10vh;
+  padding: 2vh 16vh;
 }
 
 @media screen and (max-width: 1192px) {
@@ -31,7 +30,7 @@
   .column {
     width: 60%;
   }
-  .column-content {
+  .menu-column-content {
     padding: 4vh;
   }
   .radar-content {
@@ -48,7 +47,7 @@
     width: 100%;
   }
 
-  .column-content {
+  .menu-column-content {
     padding: 4vh;
   }
   .radar-content {

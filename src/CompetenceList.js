@@ -1,6 +1,6 @@
 import React from "react";
-import CompetenceSlider from "./CompetenceSlider";
 import "./CompetenceList.css";
+import CompetenceSlider from "./CompetenceSlider";
 
 const CompetenceList = ({ list, onChange }) => (
   <div className="CompetenceList">

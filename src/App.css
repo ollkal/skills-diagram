@@ -3,19 +3,12 @@
 }
 
 .App-header {
+  height: 10px;
+  background: #000;
+  width: 100%;
 }
 
 .App-content {
   width: 100%;
 }
 
-input[type="text"],
-select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}

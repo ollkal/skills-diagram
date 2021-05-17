@@ -24,11 +24,14 @@ const CompetenceSlider = ({ item, onChange }) => {
   return (
     <div className="CompetenceSlider" key={item.skill}>
       <Typography>{item.skill}</Typography>
-      <Typography variant="caption" display="block" gutterBottom>
-        In publishing and graphic design, Lorem ipsum is a placeholder text
-        commonly used to demonstrate the visual form of a document or a typeface
-        without relying on meaningful content.
-      </Typography>
+      {item.desc ? (
+        <Typography variant="caption" display="block" gutterBottom>
+          {item.desc}
+        </Typography>
+      ) : (
+        <></>
+      )}
+
       <Slider
         id={item.skill}
         defaultValue={0}
@@ -36,7 +39,6 @@ const CompetenceSlider = ({ item, onChange }) => {
         valueLabelDisplay="auto"
         aria-labelledby="discrete-slider"
         marks={marks}
-        
         min={0}
         max={100}
         onChangeCommitted={onChange(item.skill)}

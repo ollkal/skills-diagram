@@ -5,6 +5,7 @@ import CompetenceList from "./CompetenceList";
 import NameForm from "./NameForm";
 import { initialList } from "./initialList";
 import { AddItem } from "./AddItem";
+import logo from "./alphadev-logo.png";
 
 const options = {
   scale: {
@@ -37,7 +38,7 @@ const CompetencePage = () => {
   };
 
   const addSkill = () => {
-    const newList = list.concat({ skill: name, value: 0 });
+    const newList = list.concat({ skill: name, value: 10 });
 
     setList(newList);
     setName("");
@@ -69,7 +70,6 @@ const CompetencePage = () => {
           data: list.filter((item) => item.value > 0).map((a) => a.value),
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
-          borderWidth: 1,
         },
       ],
     };
@@ -92,6 +92,18 @@ const CompetencePage = () => {
           </div>
         </div>
         <div className="column">
+          {!showRadar() && (
+            <div className="logo-container">
+              <div className="logo-content">
+                <img className="logo-image" src={logo} alt=""></img>
+              </div>
+              <div className="logo-content">
+                Start create your skills profile, by estimating your competence
+                to the left
+              </div>
+            </div>
+          )}
+
           <div className="radar-content ">
             {showRadar() && <Radar data={prepdata()} options={options} />}
           </div>

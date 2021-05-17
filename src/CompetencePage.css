@@ -15,11 +15,30 @@
 }
 
 .menu-column-content {
-  padding: 6vh;
+  padding: 2vh 6vh;
 }
 
 .radar-content {
   padding: 2vh 16vh;
+}
+.logo-container {
+  height: 75%;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.logo-content {
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-image {
+  width: 400px;
 }
 
 @media screen and (max-width: 1192px) {
@@ -52,5 +71,8 @@
   }
   .radar-content {
     padding: 2vh;
+  }
+  .logo-image {
+    width: 80%;
   }
 }

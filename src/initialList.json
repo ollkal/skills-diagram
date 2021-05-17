@@ -2,30 +2,32 @@
   "initialList": [
     {
       "skill": "Frontend",
+      "desc": "AngularJS, Backbone, Ember, and ReactJS",
       "value": 0
     },
     {
       "skill": "Backend",
+      "desc": "",
       "value": 0
     },
     {
       "skill": "Cloud",
-      "value": 0
-    },
-    {
-      "skill": "Azure",
+      "desc": "",
       "value": 0
     },
     {
       "skill": "iOS/Andorid",
+      "desc": "",
       "value": 0
     },
     {
       "skill": "CI/CD",
+      "desc": "",
       "value": 0
     },
     {
       "skill": "Devops",
+      "desc": "",
       "value": 0
     }
   ]

@@ -4,7 +4,7 @@ import CompetenceSlider from "./CompetenceSlider";
 
 const CompetenceList = ({ list, onChange }) => (
   <div className="CompetenceList">
-    <h3>Rate my skills</h3>
+    <h3>2. Rate my skills</h3>
     {list.map((item) => (
       <CompetenceSlider
         key={item.skill}

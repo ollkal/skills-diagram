@@ -75,7 +75,7 @@ export const AddItem = ({ name, onChange, onAdd }) => {
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Persitence layer is on my todo list. Better luck next time.
+            Persistence layer is on my todo list. Better luck next time.
           </DialogContentText>
         </DialogContent>
         <DialogActions>

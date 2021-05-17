@@ -47,6 +47,7 @@ export const AddItem = ({ name, onChange, onAdd }) => {
           size="large"
           color="primary"
           onClick={onAdd}
+          disabled={!!!name}
         >
           Add
         </Button>

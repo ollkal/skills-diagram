@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/skills-diagram/static/css/main.14dfe6f5.chunk.css",
-    "main.js": "/skills-diagram/static/js/main.fc4bc045.chunk.js",
-    "main.js.map": "/skills-diagram/static/js/main.fc4bc045.chunk.js.map",
+    "main.js": "/skills-diagram/static/js/main.6b6cafc3.chunk.js",
+    "main.js.map": "/skills-diagram/static/js/main.6b6cafc3.chunk.js.map",
     "runtime-main.js": "/skills-diagram/static/js/runtime-main.0e12fc91.js",
     "runtime-main.js.map": "/skills-diagram/static/js/runtime-main.0e12fc91.js.map",
     "static/js/2.c87e0cea.chunk.js": "/skills-diagram/static/js/2.c87e0cea.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0e12fc91.js",
     "static/js/2.c87e0cea.chunk.js",
     "static/css/main.14dfe6f5.chunk.css",
-    "static/js/main.fc4bc045.chunk.js"
+    "static/js/main.6b6cafc3.chunk.js"
   ]
 }

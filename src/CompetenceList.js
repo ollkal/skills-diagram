@@ -2,14 +2,15 @@ import React from "react";
 import "./CompetenceList.css";
 import CompetenceSlider from "./CompetenceSlider";
 
-const CompetenceList = ({ list, onChange }) => (
+const CompetenceList = ({ skillList, onChange, disabled }) => (
   <div className="CompetenceList">
     <h3>2. Rate my skills</h3>
-    {list.map((item) => (
+    {skillList.map((item) => (
       <CompetenceSlider
         key={item.skill}
         item={item}
         onChange={onChange}
+        disabled={disabled}
       ></CompetenceSlider>
     ))}
   </div>

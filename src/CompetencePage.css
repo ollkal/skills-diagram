@@ -19,8 +19,12 @@
 }
 
 .radar-content {
-  padding: 2vh 16vh;
+  padding: 2vw 16vh;
+  position: relative;
+  height: 40vh;
+  width: 50vw;
 }
+
 .logo-container {
   height: 75%;
   width: 100%;
@@ -71,6 +75,7 @@
   }
   .radar-content {
     padding: 2vh;
+    width: 90vw;
   }
   .logo-image {
     width: 80%;

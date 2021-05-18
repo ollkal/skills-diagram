@@ -4,7 +4,8 @@ import "./CompetencePage.css";
 import CompetenceList from "./CompetenceList";
 import NameForm from "./NameForm";
 import { initialList } from "./initialList";
-import { AddItem } from "./AddItem";
+import { AddSkill } from "./AddSkill";
+import { PersistSkillProfile } from "./PersistSkillProfile";
 import logo from "./alphadev-logo.png";
 
 const options = {
@@ -17,64 +18,66 @@ const options = {
 };
 
 const CompetencePage = () => {
-  const [list, setList] = React.useState(initialList);
+  const [skillList, setSkillList] = React.useState(initialList);
+  const [skill, setSkill] = React.useState("");
   const [name, setName] = React.useState("");
 
-  function handleChange(event) {
-    setName(event.target.value);
+  function setSkillName(event) {
+    setSkill(event.target.value);
   }
 
   const changeSkillLevel = (id) => (event, value) => {
-    var newList = list.slice();
+    var newSkillList = skillList.slice();
 
-    for (var i in newList) {
-      if (newList[i].skill === id) {
-        newList[i].value = value;
+    for (var i in newSkillList) {
+      if (newSkillList[i].skill === id) {
+        newSkillList[i].value = value;
         break;
       }
     }
 
-    setList(newList);
+    setSkillList(newSkillList);
   };
 
   const addSkill = () => {
-    const newList = list.concat({ skill: name, value: 10 });
+    const newSkillList = skillList.concat({ skill: skill, value: 10 });
 
-    setList(newList);
-    setName("");
+    setSkillList(newSkillList);
+    setSkill("");
   };
 
-  const removeSkill = (id) => {
-    var newList = list.slice();
-
-    for (var i in newList) {
-      if (newList[i].skill === id) {
-        newList.splice(i, 1);
-        break;
-      }
-    }
-
-    setList(newList);
+  const onSubmit = () => {
+    download(
+      JSON.stringify(skillList, null, "\t"),
+      "profile.json",
+      "application/json"
+    );
   };
 
-  const showRadar = () => {
-    return list.filter((item) => item.value > 0).length > 2;
+  const download = (content, fileName, contentType) => {
+    var a = document.createElement("a");
+    var file = new Blob([content], { type: contentType });
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
   };
 
-  const prepdata = () => {
-    let data = {
-      labels: list.filter((item) => item.value > 0).map((a) => a.skill),
+  const showChart = () => {
+    return skillList.filter((item) => item.value > 0).length > 2 && name;
+  };
+
+  const prepareChartData = () => {
+    return {
+      labels: skillList.filter((item) => item.value > 0).map((a) => a.skill),
       datasets: [
         {
           label: "% of skills",
-          data: list.filter((item) => item.value > 0).map((a) => a.value),
+          data: skillList.filter((item) => item.value > 0).map((a) => a.value),
           backgroundColor: "rgba(255, 99, 132, 0.2)",
           borderColor: "rgba(255, 99, 132, 1)",
         },
       ],
     };
-
-    return data;
   };
 
   return (
@@ -82,17 +85,23 @@ const CompetencePage = () => {
       <div className="row">
         <div className="menu-column">
           <div className="menu-column-content">
-            <NameForm></NameForm>
+            <NameForm name={name} setName={setName}></NameForm>
             <CompetenceList
-              list={list}
+              skillList={skillList}
               onChange={changeSkillLevel}
-              onRemove={removeSkill}
+              disabled={!!!name}
             />
-            <AddItem name={name} onChange={handleChange} onAdd={addSkill} />
+            <AddSkill
+              name={skill}
+              setSkillName={setSkillName}
+              onAdd={addSkill}
+              onSubmit={onSubmit}
+            />
+            <PersistSkillProfile onSubmit={onSubmit} disabled={!showChart()} />
           </div>
         </div>
         <div className="column">
-          {!showRadar() && (
+          {!showChart() && (
             <div className="logo-container">
               <div className="logo-content">
                 <img className="logo-image" src={logo} alt=""></img>
@@ -104,8 +113,10 @@ const CompetencePage = () => {
             </div>
           )}
 
-          <div className="radar-content ">
-            {showRadar() && <Radar data={prepdata()} options={options} />}
+          <div className="radar-content">
+            {showChart() && (
+              <Radar data={prepareChartData()} options={options} />
+            )}
           </div>
         </div>
       </div>

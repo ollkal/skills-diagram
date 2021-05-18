@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import "./NameForm.css";
 
-const NameForm = () => {
-  const [name, setName] = useState("");
-
+const NameForm = ({ name, setName }) => {
   const useStyles = makeStyles((theme) => ({
     root: {
       "& > *": {
@@ -26,6 +24,7 @@ const NameForm = () => {
             id="outlined-basic"
             label="Name"
             value={name}
+            autoFocus
             onChange={(e) => setName(e.target.value)}
             variant="outlined"
           />

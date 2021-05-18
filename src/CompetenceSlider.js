@@ -3,7 +3,7 @@ import Slider from "@material-ui/core/Slider";
 import Typography from "@material-ui/core/Typography";
 import "./CompetenceSlider.css";
 
-const CompetenceSlider = ({ item, onChange }) => {
+const CompetenceSlider = ({ item, onChange, disabled }) => {
   const [sliderValue, setSliderValue] = React.useState(item.value);
 
   function handleSliderChange(e, value) {
@@ -24,9 +24,9 @@ const CompetenceSlider = ({ item, onChange }) => {
   return (
     <div className="CompetenceSlider" key={item.skill}>
       <Typography>{item.skill}</Typography>
-      {item.desc ? (
+      {item.description ? (
         <Typography variant="caption" display="block" gutterBottom>
-          {item.desc}
+          {item.description}
         </Typography>
       ) : (
         <></>
@@ -40,6 +40,7 @@ const CompetenceSlider = ({ item, onChange }) => {
         aria-labelledby="discrete-slider"
         marks={marks}
         min={0}
+        disabled={disabled}
         max={100}
         onChangeCommitted={onChange(item.skill)}
         onChange={handleSliderChange}

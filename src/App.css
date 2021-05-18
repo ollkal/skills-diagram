@@ -1,5 +1,8 @@
-.App {
+body {
   background: #f1f1f1;
+}
+
+.App {
 }
 
 .App-header {
@@ -11,4 +14,3 @@
 .App-content {
   width: 100%;
 }
-

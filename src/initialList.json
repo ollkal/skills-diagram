@@ -2,32 +2,32 @@
   "initialList": [
     {
       "skill": "Frontend",
-      "desc": "React, Angular, Vue, JS,​ HTML, CSS​",
+      "description": "React, Angular, Vue, JS,​ HTML, CSS​",
       "value": 0
     },
     {
       "skill": "Backend",
-      "desc": "Node.js, .NET, Java, Go, Python, SQL, NoSQL",
+      "description": "Node.js, .NET, Java, Go, Python, SQL, NoSQL",
       "value": 0
     },
     {
       "skill": "Cloud platforms​",
-      "desc": "AWS, GCP, Azure, ​Docker, Kubernetes",
+      "description": "AWS, GCP, Azure, ​Docker, Kubernetes",
       "value": 0
     },
     {
       "skill": "App development",
-      "desc": "iOS/Andorid",
+      "description": "iOS/Andorid",
       "value": 0
     },
     {
       "skill": "Devops",
-      "desc": "Build pipelines (CI/CD), Monitoring, ​Central Logging, Alerting​",
+      "description": "Build pipelines (CI/CD), Monitoring, ​Central Logging, Alerting​",
       "value": 0
     },
     {
       "skill": "Security & Infrastructure​",
-      "desc": "Authentication & Authorization (OAUTH, JWT, OpenId),​TLS, OWASP",
+      "description": "Authentication & Authorization (OAUTH, JWT, OpenId),​TLS, OWASP",
       "value": 0
     }
   ]

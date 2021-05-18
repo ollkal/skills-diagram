@@ -21,6 +21,7 @@ const CompetencePage = () => {
   const [skillList, setSkillList] = React.useState(initialList);
   const [skill, setSkill] = React.useState("");
   const [name, setName] = React.useState("");
+  const [profession, setProfession] = React.useState("");
 
   function setSkillName(event) {
     setSkill(event.target.value);
@@ -47,9 +48,15 @@ const CompetencePage = () => {
   };
 
   const onSubmit = () => {
+    var document = {
+      name: name,
+      profession: profession,
+      created: new Date().toUTCString(),
+      skills: skillList,
+    };
     download(
-      JSON.stringify(skillList, null, "\t"),
-      "profile.json",
+      JSON.stringify(document, null, "\t"),
+      `Skills profile for ${name}.json`,
       "application/json"
     );
   };
@@ -85,7 +92,12 @@ const CompetencePage = () => {
       <div className="row">
         <div className="menu-column">
           <div className="menu-column-content">
-            <NameForm name={name} setName={setName}></NameForm>
+            <NameForm
+              name={name}
+              setName={setName}
+              profession={profession}
+              setProfession={setProfession}
+            ></NameForm>
             <CompetenceList
               skillList={skillList}
               onChange={changeSkillLevel}

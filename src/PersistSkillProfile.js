@@ -51,12 +51,10 @@ export const PersistSkillProfile = ({ onSubmit, disabled }) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">
-          {"Results are transmitted to the moon"}
-        </DialogTitle>
+        <DialogTitle id="alert-dialog-title">{"Great work"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Persistence layer is on my todo list. Better luck next time.
+            Your skills profile have now been generated. Have a good day.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
